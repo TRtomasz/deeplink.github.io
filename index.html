@@ -1,13 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Stremio Deeplinks</title>
+    </head>
+    <style>
+        :root {
+            --primary-background-color: #0c0b11;
+            --secondary-background-color: #1a173e;
+            --primary-foreground-color: rgba(255, 255, 255, 0.9);
+        }
 
-<a href="stremio:///board">Board</a>
-<a href="stremio:///discover">discover</a>
-<a href="stremio:///detail/movie/tt0238546/tt0238546">disc movie</a>
-<a href="stremio:///detail/series/tt0944947">disc series</a>
-<a href="stremio:///detail/series/tt0944947/tt0944947:8:6">disc series season episode</a>
-<a href="stremio:///search?search=queen%20of%20the%20damned">search</a>
-<a href="stremio:///discover/https%3A%2F%2Fv3-cinemeta.strem.io%2Fmanifest.json/series/year?genre=2010">Meta addon</a>
-<a href="stremio:///discover/https%3A%2F%2Fpodcasts-for-all.ga%2Fmanifest.json/Podcasts/byCountry?genre=Bulgaria">meta addon genre</a>
+        * {
+            box-sizing: border-box;
+        }
 
-<a href="stremio:///discover/https%3A%2F%2Fpodcasts-for-all.ga%2Fmanifest.json/Podcasts/invalid?genre=Bulgaria">broken 1</a>
-<a href="stremio:///discover/https%3A%2F%2Fpodcasts-for-all.ga%2Fmafest.json/Podcasts/byCountry?genre=Bulgaria">broken 2</a>
-<a href="magnet:?xt=urn:btih:2b785c74565eef62c5b9cff072fdb6c9d721a2e3&dn=Saturday.Night.Live.S50E14.Lady.Gaga.1080p.HEVC.x265-MeGusta%5BEZTVx.to%5D.mkv%5Beztv%5D&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fp4p.arenabg.com%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce">magnet</a>
+        html {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            height: 100%;
+            margin: 0;
+            padding: 0 2rem;
+            background: linear-gradient(41deg, var(--primary-background-color) 0%, var(--secondary-background-color) 100%);
+            background-repeat: no-repeat;
+            overflow-y: auto;
+        }
+
+        h1 {
+            color: var(--primary-foreground-color);
+        }
+
+        section {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+        }
+
+        a {
+            flex: none;
+            font-size: 1.5rem;
+            padding: 0.5rem 0.75rem;
+            color: var(--primary-foreground-color);
+            background-color: rgba(255, 255, 255, 0.1);
+            text-decoration: none;
+            border-radius: 0.5rem;
+        }
+
+        a:hover, a:active  {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+    <body>
+        <h1>
+            Stremio Deeplinks
+        </h1>
+
+        <section>
+            <a href="stremio:///board">Board</a>
+        </section>
+
+        <section>
+            <a href="stremio:///discover">Discover</a>
+            <a href="stremio:///discover/https%3A%2F%2Fv3-cinemeta.strem.io%2Fmanifest.json/series/year?genre=2010">Discover addon</a>
+            <a href="stremio:///discover/https%3A%2F%2Fpodcasts-for-all.ga%2Fmanifest.json/Podcasts/byCountry?genre=Bulgaria">Discover addon genre</a>
+            <a href="stremio:///discover/https%3A%2F%2Fpodcasts-for-all.ga%2Fmanifest.json/Podcasts/invalid?genre=Bulgaria">Discover broken 1</a>
+            <a href="stremio:///discover/https%3A%2F%2Fpodcasts-for-all.ga%2Fmafest.json/Podcasts/byCountry?genre=Bulgaria">Discover broken 2</a>
+        </section>
+
+        <section>
+            <a href="stremio:///detail/movie/tt0238546/tt0238546">Detail movie</a>
+            <a href="stremio:///detail/series/tt0944947">Detail series</a>
+            <a href="stremio:///detail/series/tt0944947/tt0944947:8:6">Detail series season episode</a>
+        </section>
+
+        <section>
+            <a href="stremio:///search?search=queen%20of%20the%20damned">Search</a>
+        </section>
+        
+        <section>
+            <a href="magnet:?xt=urn:btih:2b785c74565eef62c5b9cff072fdb6c9d721a2e3&dn=Saturday.Night.Live.S50E14.Lady.Gaga.1080p.HEVC.x265-MeGusta%5BEZTVx.to%5D.mkv%5Beztv%5D&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fp4p.arenabg.com%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce">Magnet</a>
+        </section>
+        </div>
+    </body>
+</html>
